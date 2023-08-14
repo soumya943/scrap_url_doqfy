@@ -1,0 +1,7 @@
+django
+django-crontab
+cryptography
+requests
+beautifulsoup4
+celery
+django-redis

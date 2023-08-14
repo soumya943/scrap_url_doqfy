@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PasteLockly - Create Snippet</title>
+</head>
+<body>
+    <h1>Create a Snippet</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="content">Enter your text:</label>
+        <textarea name="content" required></textarea>
+        <label for="secret_key">secret key:</label>
+        <input type="text" name="secret_key">
+        <button type="submit">Create Snippet</button>
+    </form>
+    
+    {% if snippet_id %}
+        <p>Short URL: <a href="{% url 'view_snippet' snippet_id=snippet_id %}">{{ request.get_host }}/view/{{ snippet_id }}</a></p>
+    {% endif %}
+
+</body>
+</html>
+
+
+
+
